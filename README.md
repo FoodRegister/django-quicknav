@@ -2,7 +2,7 @@
 
 Create an Admin Interface so that you can modify your navbar, create templates that you can switch to.
 
-To recover the template, you just need to import the navapp.models and launch the get_actual_template function with the request, you will then get an object containing a list of item that you can gather by doing template.items.all() and that you can use in your navbar. You just need to enable the navapp app in the settings and add the admin area into the quicknav/ url as in the quicknav urls and settings. If you wanna do a bit of css and create your own admin interface area, you can say in the settings what html template you want to use.
+To recover the template, you just need to import the navapp.models and launch the get_actual_template function with the request, you will then get an object containing a list of item that you can gather by doing template.items.all() and that you can use in your navbar. You just need to enable the navapp app in the settings and add the admin area into the quicknav/ url as in the quicknav urls and settings. If you wanna do a bit of css and create your own admin interface area, you can say in the settings what html template you want to use. You can also use the get_authorized_items, which returns the allowed data for a user
 
 An Item contains also information like if it is allowed for normal users or only administrators.
 
