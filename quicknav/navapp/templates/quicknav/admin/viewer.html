@@ -1,0 +1,40 @@
+
+
+Template : {{ nvtem.name }}
+<br><br>
+{% for obj in items %}
+<form action="/quicknav/admin/{{ nvtem.id }}/item/{{ obj.id }}/edit" method="POST">
+    {% csrf_token %}
+    <input type="text" name="text" placeholder="Item Name" value="{{ obj.text }}">
+    <input type="text" name="url" placeholder="Item Url" value="{{ obj.url }}">
+    <input type="text" name="class" placeholder="Item Classes" value="{{ obj.class_type }}">
+    <input type="checkbox" id="cbox{{ obj.id }}" name="is_admin">
+    <script>
+        document.getElementById("cbox{{ obj.id }}").checked = "{{ obj.is_admin }}" == "True"
+    </script>
+    <button>Modifier</button>
+</form>
+<form action="/quicknav/admin/{{ nvtem.id }}/item/{{ obj.id }}/delete" method="POST">
+    {% csrf_token %}
+    <button>Supprimer</button>
+</form>
+<br>
+{% endfor %}
+
+<form action="/quicknav/admin/{{ nvtem.id }}/item/create" method="POST">
+    {% csrf_token %}
+    <input type="text" name="text" placeholder="Item Name">
+    <input type="text" name="url" placeholder="Item Url">
+    <input type="text" name="class" placeholder="Item Classes">
+    <input type="checkbox" name="is_admin">
+    <button>Créer l'objet</button>
+</form>
+
+<form action="/quicknav/admin/{{ nvtem.id }}/toggle" method="POST">
+{% csrf_token %}
+{% if nvtem.is_active %}
+<button>Disable Active</button>
+{% else %}
+<button>Enable Active</button>
+{% endif %}
+</form>

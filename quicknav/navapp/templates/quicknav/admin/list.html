@@ -1,0 +1,11 @@
+{% for nvtem in nvtems %}
+
+<a href="/quicknav/admin/{{ nvtem.id }}/edit">{{ nvtem.name }}</a><br>
+
+{% endfor %}
+<br>
+<form action="/quicknav/admin/create" method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="nom de la template">
+    <button>Créer la Template</button>
+</form>
