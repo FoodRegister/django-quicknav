@@ -27,9 +27,9 @@ def get_templates(request):
 def get_authorized_items(request):
     template = get_actual_template(request)
 
-    if self.request.user.is_staff:
+    if request.user.is_staff:
         return template.items.all()
-    elif self.request.user.is_authenticated:
+    elif request.user.is_authenticated:
         return template.items.filter(is_admin=False)
     return []
 
