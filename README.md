@@ -1,5 +1,5 @@
 
-Warning, this project is no longer maintained because it is no longer part of our product, if you are still using it in some way, please consider forking it to fix the bugs as we wont maintain a project that we no longer use?
+Warning, this project is no longer maintained because it is no longer part of our product, if you are still using it in some way, please consider forking it to fix the bugs as we wont maintain a project that we no longer use.
 
 # django-quicknav
 
